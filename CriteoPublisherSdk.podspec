@@ -27,11 +27,11 @@ Pod::Spec.new do |spec|
   spec.default_subspecs  = "Sdk"
   spec.dependency          "CriteoMRAID", "~> 1.0.1"
 
-  spec.resource_bundles = {'CriteoPublisherSDK' => ['CriteoPublisherSDK/Sources/PrivacyInfo.xcprivacy']}
+  spec.resource_bundles = {'CriteoPublisherSDK' => ['CriteoPublisherSDK/Sources/CriteoPublisherSDK/PrivacyInfo.xcprivacy']}
 
   spec.subspec "Sdk" do |sdk|
     sdk.source_files         = "CriteoPublisherSdk/Sources/**/*.{h,m,swift}"
-    sdk.public_header_files  = "CriteoPublisherSdk/Sources/Public/*.h"
+    sdk.public_header_files  = "CriteoPublisherSdk/Sources/CriteoPublisherSdk/Public/*.h"
     sdk.weak_frameworks      = "WebKit"
   end
 
