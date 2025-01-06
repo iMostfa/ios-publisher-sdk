@@ -47,3 +47,8 @@ vendor
 
 # Secret file
 env.secret.sh
+
+### SwiftPackageManager ###
+Packages
+.build/
+DerivedData/
