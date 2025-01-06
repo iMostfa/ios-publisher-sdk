@@ -61,9 +61,6 @@ let package = Package(
             name: "SKAdNetworkInfo",
             dependencies: ["CriteoCore"],
             path: "CriteoPublisherSdk/Sources/SKAdNetworkInfo"
-//            linkerSettings: [
-//                .unsafeFlags(["-ObjC"]),
-//            ]
         ),
         .target(
             name: "MRAID",
