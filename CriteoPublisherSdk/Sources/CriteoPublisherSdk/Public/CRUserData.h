@@ -18,7 +18,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CriteoPublisherSdk/CREmailHasher.h>
+#import <CREmailHasher.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -19,7 +19,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CriteoPublisherSdk/CRAdUnit.h>
+#import <CRAdUnit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

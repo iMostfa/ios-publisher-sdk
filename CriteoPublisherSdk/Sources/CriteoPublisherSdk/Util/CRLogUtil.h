@@ -18,11 +18,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#if __has_include("CriteoPublisherSdk-Swift.h")
-#import "CriteoPublisherSdk-Swift.h"
-#else
-#import <CriteoPublisherSdk/CriteoPublisherSdk-Swift.h>
-#endif
+@import MRAID;
 
 NS_ASSUME_NONNULL_BEGIN
 

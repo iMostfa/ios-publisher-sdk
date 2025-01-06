@@ -18,11 +18,6 @@
 //
 
 #import "Criteo.h"
-#if __has_include("CriteoPublisherSdk-Swift.h")
-#import "CriteoPublisherSdk-Swift.h"
-#else
-#import <CriteoPublisherSdk/CriteoPublisherSdk-Swift.h>
-#endif
 #import "Criteo+Internal.h"
 #import "CR_AdUnitHelper.h"
 #import "CR_BidManager.h"
@@ -32,6 +27,9 @@
 #import "CR_IntegrationRegistry.h"
 #import "CR_UserDataHolder.h"
 #import "CR_URLOpener.h"
+#import "CRSKAdNetworkInfo.h"
+#import "CRConstants.h"
+@import SKAdNetworkInfo;
 
 @implementation Criteo
 

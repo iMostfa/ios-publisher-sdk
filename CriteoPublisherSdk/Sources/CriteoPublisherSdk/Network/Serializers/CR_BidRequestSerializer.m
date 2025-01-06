@@ -17,12 +17,6 @@
 // limitations under the License.
 //
 
-#if __has_include("CriteoPublisherSdk-Swift.h")
-#import "CriteoPublisherSdk-Swift.h"
-#else
-#import <CriteoPublisherSdk/CriteoPublisherSdk-Swift.h>
-#endif
-
 #import "CR_ApiQueryKeys.h"
 #import "CR_BidRequestSerializer.h"
 #import "CR_CdbRequest.h"
@@ -36,6 +30,8 @@
 #import "CRUserData+Internal.h"
 #import "CR_InternalContextProvider.h"
 #import "CR_Logging.h"
+#import "CRSKAdNetworkInfo.h"
+@import SKAdNetworkInfo;
 
 @interface CR_BidRequestSerializer ()
 

@@ -20,7 +20,7 @@
 #ifndef CRBid_Internal_h
 #define CRBid_Internal_h
 
-#import <CriteoPublisherSdk/CRBid.h>
+#import <CRBid.h>
 #import "CRAdUnit.h"
 #import "CRAdUnit+Internal.h"
 

@@ -19,10 +19,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CriteoPublisherSdk/CRBannerViewDelegate.h>
-#import <CriteoPublisherSdk/CRBannerAdUnit.h>
-#import <CriteoPublisherSdk/CRBid.h>
-#import <CriteoPublisherSdk/CRContextData.h>
+#import <CRBannerViewDelegate.h>
+#import <CRBannerAdUnit.h>
+#import <CRBid.h>
+#import <CRContextData.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

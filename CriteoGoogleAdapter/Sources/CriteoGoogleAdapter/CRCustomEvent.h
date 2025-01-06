@@ -18,8 +18,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GoogleMobileAds/GoogleMobileAds.h>
-#import <CriteoPublisherSdk/CriteoPublisherSdk.h>
+#import "CriteoPublisherSdk.h"
+@import GoogleMobileAds;
 
 NS_ASSUME_NONNULL_BEGIN
 

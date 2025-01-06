@@ -20,10 +20,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <CriteoPublisherSdk/CRBid.h>
-#import <CriteoPublisherSdk/CRInterstitialAdUnit.h>
-#import <CriteoPublisherSdk/CRInterstitialDelegate.h>
-#import <CriteoPublisherSdk/CRContextData.h>
+#import <CRBid.h>
+#import <CRInterstitialAdUnit.h>
+#import <CRInterstitialDelegate.h>
+#import <CRContextData.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

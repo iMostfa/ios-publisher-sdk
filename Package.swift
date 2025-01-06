@@ -29,23 +29,41 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "CriteoPublisherSdk",
-            dependencies: ["MRAID"],
+            dependencies: ["MRAID", "CriteoCore", "SKAdNetworkInfo"],
             path: "CriteoPublisherSdk/Sources/CriteoPublisherSdk",
             resources: [
                 .process("PrivacyInfo.xcprivacy")
             ],
             publicHeadersPath: "Public",
+            cSettings: [
+                .headerSearchPath("AppEvents"),
+                .headerSearchPath("Cassette"),
+                .headerSearchPath("Configuration"),
+                .headerSearchPath("Context"),
+                .headerSearchPath("Criteo"),
+                .headerSearchPath("DataConsent"),
+                .headerSearchPath("Display"),
+                .headerSearchPath("Feedback"),
+                .headerSearchPath("Logging"),
+                .headerSearchPath("Native"),
+                .headerSearchPath("Network"),
+                .headerSearchPath("Public"),
+                .headerSearchPath("SKAdNetwork"),
+                .headerSearchPath("Standalone"),
+                .headerSearchPath("Threading"),
+                .headerSearchPath("Util")
+            ],
             linkerSettings: [
                 .linkedFramework("WebKit"),
             ]
         ),
         .target(
             name: "SKAdNetworkInfo",
-            dependencies: ["CriteoPublisherSdk"],
-            path: "CriteoPublisherSdk/Sources/SKAdNetworkInfo",
-            linkerSettings: [
-                .unsafeFlags(["-ObjC"]),
-            ]
+            dependencies: ["CriteoCore"],
+            path: "CriteoPublisherSdk/Sources/SKAdNetworkInfo"
+//            linkerSettings: [
+//                .unsafeFlags(["-ObjC"]),
+//            ]
         ),
         .target(
             name: "MRAID",
@@ -57,7 +75,12 @@ let package = Package(
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
                 "CriteoPublisherSdk"
             ],
-            path: "CriteoGoogleAdapter/Sources",
+            path: "CriteoGoogleAdapter/Sources/CriteoGoogleAdapter",
+            publicHeadersPath: "."
+        ),
+        .target(
+            name: "CriteoCore",
+            path: "CriteoPublisherSdk/Sources/CriteoCore",
             publicHeadersPath: "."
         ),
     ],

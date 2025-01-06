@@ -20,7 +20,7 @@
 #ifndef CRNativeAdUnit_h
 #define CRNativeAdUnit_h
 
-#import <CriteoPublisherSdk/CRAdUnit.h>
+#import <CRAdUnit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -21,11 +21,11 @@
 #define Criteo_h
 
 #import <Foundation/Foundation.h>
-#import <CriteoPublisherSdk/CRAdUnit.h>
-#import <CriteoPublisherSdk/CRBid.h>
-#import <CriteoPublisherSdk/CRContextData.h>
-#import <CriteoPublisherSdk/CRSKAdNetworkInfo.h>
-#import <CriteoPublisherSdk/CRUserData.h>
+#import <CRAdUnit.h>
+#import <CRBid.h>
+#import <CRContextData.h>
+#import <CRSKAdNetworkInfo.h>
+#import <CRUserData.h>
 
 /** Bid response handler, bid can be nil on purpose */
 typedef void (^CRBidResponseHandler)(CRBid *_Nullable bid);

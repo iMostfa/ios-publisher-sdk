@@ -18,7 +18,7 @@
 //
 
 import Foundation
-import CriteoPublisherSdk
+import CriteoCore
 
 struct SKAdNetworkInfo {
   let adNetworkIds: [String]
