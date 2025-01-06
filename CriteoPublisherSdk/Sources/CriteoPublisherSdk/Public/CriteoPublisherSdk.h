@@ -39,3 +39,4 @@
 #import <CRRewardedAdUnit.h>
 #import <Criteo.h>
 #import <CRMediaDownloader.h>
+#import <NSString+CriteoUrl.h>
