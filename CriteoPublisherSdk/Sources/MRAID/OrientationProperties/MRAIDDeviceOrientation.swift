@@ -17,7 +17,7 @@
 // limitations under the License.
 //
 
-import Foundation
+import UIKit
 
 public enum MRAIDDeviceOrientation: String, Decodable {
     case portrait

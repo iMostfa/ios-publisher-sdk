@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -17,7 +17,8 @@ let package = Package(
         ),
         .library(
             name: "GoogleAdapter",
-            targets: ["GoogleAdapter", "CriteoPublisherSdk"]
+            type: .static,
+            targets: ["GoogleAdapter"]
         ),
     ],
     dependencies: [
@@ -28,10 +29,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "CriteoPublisherSdk",
-            dependencies: [
-                "SKAdNetworkInfo",
-                "MRAID"
-            ],
+            dependencies: ["MRAID"],
             path: "CriteoPublisherSdk/Sources/CriteoPublisherSdk",
             resources: [
                 .process("PrivacyInfo.xcprivacy")
@@ -43,7 +41,11 @@ let package = Package(
         ),
         .target(
             name: "SKAdNetworkInfo",
-            path: "CriteoPublisherSdk/Sources/SKAdNetworkInfo"
+            dependencies: ["CriteoPublisherSdk"],
+            path: "CriteoPublisherSdk/Sources/SKAdNetworkInfo",
+            linkerSettings: [
+                .unsafeFlags(["-ObjC"]),
+            ]
         ),
         .target(
             name: "MRAID",
@@ -52,10 +54,12 @@ let package = Package(
         .target(
             name: "GoogleAdapter",
             dependencies: [
-                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
+                "CriteoPublisherSdk"
             ],
             path: "CriteoGoogleAdapter/Sources",
             publicHeadersPath: "."
         ),
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )
