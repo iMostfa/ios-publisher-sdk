@@ -25,8 +25,9 @@ let package = Package(
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: "11.1.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+
+        // MARK: - Criteo
+
         .target(
             name: "CriteoPublisherSdk",
             dependencies: ["MRAID", "CriteoCore", "SKAdNetworkInfo"],
@@ -57,15 +58,59 @@ let package = Package(
                 .linkedFramework("WebKit"),
             ]
         ),
+        .testTarget(
+            name: "CriteoPublisherSdkTests",
+            dependencies: ["CriteoPublisherSdk", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/Criteo"
+        ),
+        .testTarget(
+            name: "CriteoPublisherSdkSwiftTests",
+            dependencies: ["CriteoPublisherSdk", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/CriteoSwift"
+        ),
+        .testTarget(
+            name: "FeedbackTests",
+            dependencies: ["CriteoPublisherSdk", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/Feedback"
+        ),
+        .testTarget(
+            name: "LoggingTests",
+            dependencies: ["CriteoPublisherSdk", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/Logging"
+        ),
+        .testTarget(
+            name: "NetworkTests",
+            dependencies: ["CriteoPublisherSdk", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/Network"
+        ),
+
+
+        // MARK: - SKAdNetworkInfo
         .target(
             name: "SKAdNetworkInfo",
             dependencies: ["CriteoCore"],
             path: "CriteoPublisherSdk/Sources/SKAdNetworkInfo"
         ),
+        .testTarget(
+            name: "SkAdNetworkInfoTests",
+            dependencies: ["SKAdNetworkInfo", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/SKAdNetworkInfo"
+        ),
+
+        // MARK: - MRAID
+
         .target(
             name: "MRAID",
             path: "CriteoPublisherSdk/Sources/MRAID"
         ),
+        .testTarget(
+            name: "MRAIDTests",
+            dependencies: ["MRAID", "Mocks"],
+            path: "CriteoPublisherSdk/Tests/MRAID"
+        ),
+
+        // MARK: - GoogleAdapter
+
         .target(
             name: "GoogleAdapter",
             dependencies: [
@@ -75,10 +120,23 @@ let package = Package(
             path: "CriteoGoogleAdapter/Sources/CriteoGoogleAdapter",
             publicHeadersPath: "."
         ),
+        .testTarget(
+            name: "GoogleAdapterTests",
+            dependencies: ["GoogleAdapter"],
+            path: "CriteoGoogleAdapter/Tests/CriteoGoogleAdapterTests"
+        ),
+
+        // MARK: - Dependency Management and Entanglement
+
         .target(
             name: "CriteoCore",
             path: "CriteoPublisherSdk/Sources/CriteoCore",
             publicHeadersPath: "."
+        ),
+        .target(
+            name: "Mocks",
+            dependencies: ["CriteoPublisherSdk"],
+            path: "CriteoPublisherSdk/Tests/Mocks"
         ),
     ],
     swiftLanguageVersions: [.v5]
